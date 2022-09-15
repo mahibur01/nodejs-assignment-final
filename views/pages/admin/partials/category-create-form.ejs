@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row p-4">
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/admin/dashboard">Admin</a></li>
+        <li class="breadcrumb-item"><a href="/admin/categories">Categories</a>
+        <li class="breadcrumb-item active" aria-current="page">Create Category</li>
+        </li>
+      </ol>
+    </nav>
+
+    <form action="http://localhost:8080/admin/categories" method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" class="form-control" name="title">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Slug</label>
+        <input type="text" class="form-control" name="slug">
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Choose Image File</label>
+        <input class="form-control" type="file" name="cat_image" id="formFile">
+      </div>
+      <button type="submit" class="btn btn-primary" style="background-color: var(--primary-color);">Submit</button>
+    </form>
+  </div>
+</div>

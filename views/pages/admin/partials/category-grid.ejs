@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row p-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/admin/dashboard">Admin</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Category<a class="btn btn-primary btn-sm ms-5"
+            href="/admin/create-category" tabindex="-1" role="button" aria-disabled="true"
+            style="background-color: var(--primary-color);">Create Category</a></li>
+      </ol>
+    </nav>
+    <table id="example" class="table table-striped" style="width:100%">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Slug</th>
+          <th>Image</th>
+          <th>Time | Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i < categories.length; i++) { %>
+          <tr>
+            <td>
+              <%= categories[i].id %>
+            </td>
+            <td>
+              <%= categories[i].title %>
+            </td>
+            <td>
+              <%= categories[i].slug %>
+            </td>
+            <td>
+              <%= categories[i].image %>
+            </td>
+            <td>
+              <%= categories[i].createdAt %>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+
+    </table>
+  </div>
+</div>

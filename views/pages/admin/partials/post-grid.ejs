@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row p-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/admin/dashboard">Admin</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Posts<a class="btn btn-primary btn-sm ms-5"
+            href="/admin/create-post" tabindex="-1" role="button" aria-disabled="true"
+            style="background-color: var(--primary-color);">Create Post</a></li>
+      </ol>
+    </nav>
+    <table id="example" class="table table-striped" style="width:100%">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Slug</th>
+          <th>Image</th>
+          <th>Details</th>
+          <th>Time | Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i < posts.length; i++) { %>
+          <tr>
+            <td>
+              <%= posts[i].id %>
+            </td>
+            <td>
+              <%= posts[i].title %>
+            </td>
+            <td>
+              <%= posts[i].slug %>
+            </td>
+            <td>
+              <%= posts[i].image %>
+            </td>
+            <td>
+              <%= posts[i].details %>
+            </td>
+            <td>
+              <%= posts[i].createdAt %>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>

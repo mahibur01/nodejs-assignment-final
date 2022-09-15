@@ -1,0 +1,194 @@
+:root{
+  --bg-primary-color: #FFFFFF;
+  --bg-secondary-color: #F8F9FA;
+  --primary-color: #103076;
+  --secondary-color: #00CD92;
+  --text-default-color: #1a1a2e;
+  --text-light-color: #FFFFFF;
+  --shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --font: "muli regular", sans-serif;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background-color: var(--bg-primary-color);
+  color: var(--text-default-color);
+  font-family: var(--font);
+}
+
+.header{
+  grid-area: h;
+  background-color: var(--primary-color);
+}
+.sidebar{
+  grid-area: s;
+}
+.content{
+  grid-area: c;
+}
+.footer{
+  grid-area: f;
+}
+
+.main{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 56px auto 56px;
+  grid-template-areas: 
+  "h h h h h h h h h h h h"
+  "s s c c c c c c c c c c"
+  "f f f f f f f f f f f f"
+  ;
+
+}
+
+
+/* Sidebar */
+
+aside{
+  margin: 12px;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: var(--shadow);
+  height: 100%;
+  /* background-color: var(--bg-secondary-color); */
+}
+
+.sidebar ul li a{
+  font-size: 22px;
+  color: var(--text-default-color);
+  font-weight: 700;
+}
+
+
+/* Content */
+
+.content{
+  margin: 12px;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: var(--shadow);
+  height: 100%;
+}
+
+
+@media only screen and (max-width: 980px) { 
+
+
+aside{
+  margin: 12px;
+  border-radius: 10px;
+  padding: 0px;
+  box-shadow: var(--shadow);
+  height: 100%;
+}
+
+.sidebar{
+  padding-left: 0px !important;
+  justify-content: center !important;
+}
+
+
+.sidebar ul {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+  
+.sidebar ul li a{
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.header a img {
+  padding-left: 8px;
+}
+
+
+
+}
+
+
+/* Dashboard */
+.card-counter{
+  box-shadow: 2px 2px 10px #DADADA;
+  margin: 5px;
+  padding: 20px 10px;
+  background-color: #fff;
+  height: 100px;
+  border-radius: 5px;
+  transition: .3s linear all;
+}
+
+.card-counter:hover{
+  box-shadow: 4px 4px 20px #DADADA;
+  transition: .3s linear all;
+}
+
+.card-counter.primary{
+  background-color: #007bff;
+  color: #FFF;
+}
+
+.card-counter.danger{
+  background-color: #ef5350;
+  color: #FFF;
+}  
+
+.card-counter.success{
+  background-color: #66bb6a;
+  color: #FFF;
+}  
+
+.card-counter.info{
+  background-color: #26c6da;
+  color: #FFF;
+}  
+
+.card-counter i{
+  font-size: 5em;
+  opacity: 0.2;
+}
+
+.card-counter .count-numbers{
+  position: absolute;
+  right: 35px;
+  top: 20px;
+  font-size: 32px;
+  display: block;
+}
+
+.card-counter .count-name{
+  position: absolute;
+  right: 35px;
+  top: 65px;
+  font-style: italic;
+  text-transform: capitalize;
+  opacity: 0.5;
+  display: block;
+  font-size: 18px;
+}
+
+
+ul li a.active{
+  background-color: var(--primary-color);
+  color: var(--bg-secondary-color) !important;
+  border-radius: 10px;
+}
+
+#nav-link{
+  display: block;
+  padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+  font-size: var(--bs-nav-link-font-size);
+  font-weight: var(--bs-nav-link-font-weight);
+  color: var(--bs-nav-link-color);
+  text-decoration: none;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+  /* padding: ; */
+}

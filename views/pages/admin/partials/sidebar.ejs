@@ -1,0 +1,31 @@
+<nav id="sidebarMenu" class="d-xl-block sidebar">
+  <div class="position-sticky pt-3 sidebar-sticky">
+    <ul class="nav flex-column">
+
+      <li class="nav-item">
+        <a id="nav-link" href="/admin/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a id="nav-link" href="/admin/categories">Categories</a>
+      </li>
+
+      <li class="nav-item">
+        <a id="nav-link" href="/admin/posts">Posts</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<script type="text/javascript">
+
+  const currentLocation = location.href;
+  const menuItem = document.querySelectorAll('a');
+  const menuLength = menuItem.length
+
+  for (let i = 0; i < menuLength; i++) {
+    if (menuItem[i].href === currentLocation) {
+      menuItem[i].className = "active"
+    }
+  }
+</script>
